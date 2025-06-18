@@ -82,6 +82,10 @@ function App() {
       </form>
 
       {monthlyPayment && <h3>Monthly Payment: £{monthlyPayment}</h3>}
+
+      <a href="https://www.lloydsbank.com/help-guidance/call-us.html">
+      <button>Contact Us</button>
+    </a>
     </div>
   );
 }
