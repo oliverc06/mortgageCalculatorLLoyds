@@ -10,7 +10,6 @@ function App() {
   const [loanTerm, setLoanTerm] = useState('');
   const [interest, setInterest] = useState('');
   const [monthlyPayment, setMonthlyPayment] = useState(null);
-  //const {result, setResult} = useState(null)
 
   function calcMonthlyPayment(price, downPayment, loanTerm, interest) { //Calculates the Monthly Payments based on the values the user submits
     const loanAmount = price - downPayment;
@@ -159,8 +158,6 @@ function App() {
         {monthlyPayment && <h3>Monthly Payment: £{monthlyPayment.total}</h3>}
         <a
           href="https://www.lloydsbank.com/help-guidance/call-us.html"
-          //target='_blank'
-          //rel='noopener noreferrer'
           className='contact-button'
         >
          Contact Us
@@ -178,6 +175,3 @@ function App() {
 }
 
 export default App;
-//<a href="https://www.lloydsbank.com/help-guidance/call-us.html">
-//     <button>Contact Us</button>
-//    </a>
