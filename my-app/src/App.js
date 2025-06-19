@@ -66,8 +66,9 @@ function App() {
       ]
     : [];
 
+  console.log("Chart data", chartData)    
   return (
-    <div style={{ display: 'flex', alignItems: 'flex-start', padding: '2rem' }}>
+    <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'flex-start', padding: '2rem', gap: '2rem' }}>
       <form onSubmit={handleSubmit} style={{ flex: 1 }}>
         <h2>Mortgage Calculator</h2>
         <div>
@@ -111,41 +112,39 @@ function App() {
       </form>
 
       {monthlyPayment && (
-        <div style={{ flex: 1, textAlign: 'center' }}>
-          <h3>Total Monthly Payment</h3>
-          <div style={{ width: '100%', height: 300 }}>
-            <ResponsiveContainer>
-              <PieChart>
-                <Pie
-                  data = {chartData}
-                  dataKey = "value"
-                  nameKey = "name"
-                  cx = "50%"
-                  cy = "50%"
-                  innerRadius = {70}
-                  outerRadius = {100}
-                  label
-                >
-                  {chartData.map((entry, index) => (
-                    <Cell key={`cell-${index}`} fill={colours[index % colours.length]} />
-                  ))}
-                </Pie>
-                <Legend verticalAlign="middle" align="right" />
-              </PieChart>
-            </ResponsiveContainer>
-            <div style={{ marginTop: '-240px', fontWeight: 'bold', fontSize: '1.2rem' }}>
-              £{monthlyPayment.total}
-            </div>
+        <div className="chart-wrapper">
+          <div className="chart-container">
+            <ResponsiveContainer width="100%" height="100%">
+            <PieChart>
+              <Pie
+                data={chartData}
+                dataKey="value"
+                nameKey="name"
+                cx="50%"
+                cy="50%"
+                innerRadius={70}
+                outerRadius={100}
+                label
+              >
+                {chartData.map((entry, index) => (
+                  <Cell key={`cell-${index}`} fill={colours[index % colours.length]} />
+                ))}
+              </Pie>
+              <Legend layout="vertical" verticalAlign="middle" align="right" />
+            </PieChart>
+          </ResponsiveContainer>
+          <div className="chart-center-label">
+            £{monthlyPayment.total}
           </div>
         </div>
-      )}
-      {monthlyPayment && <h3>Monthly Payment: £{monthlyPayment.total}</h3>}
-
-      <a href="https://www.lloydsbank.com/help-guidance/call-us.html">
-      <button>Contact Us</button>
-    </a>
+        {monthlyPayment && <h3>Monthly Payment: £{monthlyPayment.total}</h3>}
+      </div>
+    )}
     </div>
   );
 }
 
 export default App;
+//<a href="https://www.lloydsbank.com/help-guidance/call-us.html">
+//     <button>Contact Us</button>
+//    </a>

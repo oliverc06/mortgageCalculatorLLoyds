@@ -1,38 +1,38 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.chart-wrapper {
+  flex: 1;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: center; /* centers the pie chart horizontally */
+  align-items: center; 
+  padding: 1rem;    /* centers vertically when needed */
+  min-width: 350px;
+  /*padding-left: 2rem;   */   /* pushes from left edge */
+  /*max-width: 500px;    */    /* limits width */
+  /*position: relative;    */  /* center label positioning */
 }
 
-.App-link {
-  color: #61dafb;
+.chart-container {
+  position: relative;
+  width: 500px;
+  height: 350px;
+  border: 1px solid #ccc; /*debuggin*/
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.chart-center-label {
+  position: absolute;
+  top: 50%;
+  left: 28.8%; /*controls where the payment number is inside pie chart */
+  transform: translate(-50%, -50%);
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.monthly-payment {
+  text-align: center;
+  margin-top: 1rem;
+  font-weight: bold;
+}
+
+form > div {
+  margin-bottom: 1rem; /*Seperates the input boxes so not directly stacked on top of each other */
 }
