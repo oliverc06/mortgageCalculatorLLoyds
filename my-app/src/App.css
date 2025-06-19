@@ -1,3 +1,23 @@
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+form {
+  margin-bottom: 2rem;
+  max-width: 600px;
+  width: 100%;
+}
+
+.chart-section {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
 .chart-wrapper {
   flex: 1;
   display: flex;
@@ -12,16 +32,17 @@
 }
 
 .chart-container {
+  width: 100%;
+  max-width: 100%;
+  height: 50vh;
   position: relative;
-  width: 500px;
-  height: 350px;
-  border: 3px solid #000000; /*debuggin*/
+  border: 3px solid #000000;
 }
 
 .chart-center-label {
   position: absolute;
-  top: 50%;
-  left: 32%; /*controls where the payment number is inside pie chart */
+  top: 48.5%;
+  left: 50%; /*controls where the payment number is inside pie chart */
   transform: translate(-50%, -50%);
   font-weight: bold;
   font-size: 1.2rem;
@@ -34,7 +55,7 @@
 }
 
 form > div {
-  margin-bottom: 1rem; /*Seperates the input boxes so not directly stacked on top of each other */
+  margin-bottom: 6rem; /*Seperates the input boxes so not directly stacked on top of each other */
 }
 
 body {
@@ -53,4 +74,60 @@ summary {
   cursor: pointer;
   color: #045f18;
   font-weight: bold;
+}
+
+body, html, #root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+}
+
+button { /*Calculate button*/
+  cursor: pointer;
+  position: flex;
+  background-color: #004b2d;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+button:hover {
+  background-color: #006644;
+}
+
+.contact-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #004b2d;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-weight: bold;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.contact-button:hover {
+  background-color: #006644;
+}
+
+.help-button {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  background-color: #004b2d;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-weight: bold;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.help-button:hover {
+  background-color: #006644;
 }

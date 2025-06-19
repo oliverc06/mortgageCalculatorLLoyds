@@ -121,11 +121,11 @@ function App() {
             value = {interest}
             onChange={(e) => setInterest(e.target.value)}
             />
+          <details>
+            <summary>What does this mean?</summary>
+            <p>The annual percentage rate charged by the lender on the remaining loan balance</p>
+          </details>
         </div>
-        <details>
-          <summary>What does this mean?</summary>
-          <p>The annual percentage rate charged by the lender on the remaining loan balance</p>
-        </details>
         <br />
         <button type="submit">Calculate</button>
       </form>
@@ -141,15 +141,15 @@ function App() {
                 nameKey="name"
                 cx="50%"
                 cy="50%"
-                innerRadius={70}
-                outerRadius={100}
+                innerRadius="40%"
+                outerRadius="80%"
                 label
               >
                 {chartData.map((entry, index) => (
                   <Cell key={`cell-${index}`} fill={colours[index % colours.length]} />
                 ))}
               </Pie>
-              <Legend layout="vertical" verticalAlign="middle" align="right" />
+              <Legend verticalAlign="bottom" align="center" />
             </PieChart>
           </ResponsiveContainer>
           <div className="chart-center-label">
@@ -157,6 +157,20 @@ function App() {
           </div>
         </div>
         {monthlyPayment && <h3>Monthly Payment: £{monthlyPayment.total}</h3>}
+        <a
+          href="https://www.lloydsbank.com/help-guidance/call-us.html"
+          //target='_blank'
+          //rel='noopener noreferrer'
+          className='contact-button'
+        >
+         Contact Us
+        </a>
+        <a
+          href="https://www.lloydsbank.com/help-guidance.html"
+          className='help-button'
+        >
+        Help
+        </a>
       </div>
     )}
     </div>
