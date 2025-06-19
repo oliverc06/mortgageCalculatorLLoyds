@@ -1,9 +1,8 @@
-//import logo from 'Lloyds-Bank-Logo';
 import './App.css';
 import React, { useState } from 'react'
 import { PieChart, Pie, Cell, Legend, ResponsiveContainer } from 'recharts'; //Implementing a pie chart with recharts
 
-const colours = ['#8884d8', '#82ca9d', '#ffc658', '#ff7f50'];
+const colours = ['#ADA8E6', '#82ca9d', '#ffc658', '#ff7f50'];
 
 function App() {
   const [price, setPrice] = useState('');
@@ -83,6 +82,10 @@ function App() {
             value = {price}
             onChange={(e) => setPrice(e.target.value)}
             />
+            <details>
+              <summary>What does this mean?</summary>
+              <p>The total price of the home you want to purchase.</p>
+            </details>
         </div>
         <div>
           <label>Down Payment (£): </label>
@@ -92,6 +95,10 @@ function App() {
             value = {downPayment}
             onChange={(e) => setDownPayment(e.target.value)}
             />
+            <details>
+              <summary>What does this mean?</summary>
+              <p>The amount you pay upfront, reducing the total loan needed</p>
+            </details>
         </div>
         <div>
           <label>Loan Term (years): </label>
@@ -101,6 +108,10 @@ function App() {
             value = {loanTerm}
             onChange={(e) => setLoanTerm(e.target.value)}
             />
+            <details>
+              <summary>What does this mean?</summary>
+              <p>The number of years over which you'll repay the mortgage</p>
+            </details>
         </div>
         <div>
           <label>Interest Rate (%): </label>
@@ -111,6 +122,10 @@ function App() {
             onChange={(e) => setInterest(e.target.value)}
             />
         </div>
+        <details>
+          <summary>What does this mean?</summary>
+          <p>The annual percentage rate charged by the lender on the remaining loan balance</p>
+        </details>
         <br />
         <button type="submit">Calculate</button>
       </form>

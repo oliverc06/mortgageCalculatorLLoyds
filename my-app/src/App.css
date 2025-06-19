@@ -15,7 +15,7 @@
   position: relative;
   width: 500px;
   height: 350px;
-  border: 1px solid #ccc; /*debuggin*/
+  border: 3px solid #000000; /*debuggin*/
 }
 
 .chart-center-label {
@@ -35,4 +35,22 @@
 
 form > div {
   margin-bottom: 1rem; /*Seperates the input boxes so not directly stacked on top of each other */
+}
+
+body {
+  background-color: #00864F;
+  margin: 0;
+  font-family: sans-serif;
+}
+
+details {
+  margin-top: 0.3rem;
+  font-size: 0.9rem;
+  color: #333;
+}
+
+summary {
+  cursor: pointer;
+  color: #045f18;
+  font-weight: bold;
 }
