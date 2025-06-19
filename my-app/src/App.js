@@ -1,4 +1,4 @@
-import logo from './logo.svg';
+//import logo from 'Lloyds-Bank-Logo';
 import './App.css';
 import React, { useState } from 'react'
 import { PieChart, Pie, Cell, Legend, ResponsiveContainer } from 'recharts'; //Implementing a pie chart with recharts
@@ -70,6 +70,10 @@ function App() {
   return (
     <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'flex-start', padding: '2rem', gap: '2rem' }}>
       <form onSubmit={handleSubmit} style={{ flex: 1 }}>
+        <img
+          src="/LLoyds-Bank-Logo.png"
+          alt="LLoyds Bank Logo"
+          style={{width: '150px', marginBottom: '1rem'}} />
         <h2>Mortgage Calculator</h2>
         <div>
           <label>Home Price (£): </label>

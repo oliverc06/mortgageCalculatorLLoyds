@@ -21,7 +21,7 @@
 .chart-center-label {
   position: absolute;
   top: 50%;
-  left: 28.8%; /*controls where the payment number is inside pie chart */
+  left: 32%; /*controls where the payment number is inside pie chart */
   transform: translate(-50%, -50%);
   font-weight: bold;
   font-size: 1.2rem;
