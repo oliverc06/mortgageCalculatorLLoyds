@@ -1,0 +1,29 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- master
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+  - task: NodeTool@0
+    inputs:
+      versionSpec: '18.x'
+    displayName: 'Install Node.js'
+
+  - script: |
+      npm install
+      npm run test -- --watchAll=false
+    displayName: 'Install and Run Tests'
+
+  - script: npm run build
+    displayName: 'Build App'
+
+  - task: PublishBuildArtifacts@1
+    inputs:
+      pathToPublish: 'build'
+      artifactName: 'react-app'
