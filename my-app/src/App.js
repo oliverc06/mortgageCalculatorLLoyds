@@ -16,9 +16,6 @@ function App() {
     const monthlyRate = interest / 100 / 12;
     const numberOfPayments = loanTerm * 12
 
-    const monthlyPayment = 
-      (loanAmount * monthlyRate * Math.pow(1 + monthlyRate, numberOfPayments)) /
-      (Math.pow(1 + monthlyRate, numberOfPayments) - 1);
 //Adding fees within monthly payments for use with pie chart
     const principleAndInterest =
     (loanAmount * monthlyRate * Math.pow(1 + monthlyRate, numberOfPayments)) /

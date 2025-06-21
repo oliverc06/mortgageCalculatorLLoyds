@@ -26,9 +26,6 @@ form {
   align-items: center; 
   padding: 1rem;    /* centers vertically when needed */
   min-width: 350px;
-  /*padding-left: 2rem;   */   /* pushes from left edge */
-  /*max-width: 500px;    */    /* limits width */
-  /*position: relative;    */  /* center label positioning */
 }
 
 .chart-container {
