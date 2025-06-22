@@ -1,5 +1,6 @@
 import './App.css';
 import React, { useState } from 'react'
+import { calcMonthlyPayment } from './calc';
 import { PieChart, Pie, Cell, Legend, ResponsiveContainer } from 'recharts'; //Implementing a pie chart with recharts
 
 const colours = ['#ADA8E6', '#82ca9d', '#ffc658', '#ff7f50'];
@@ -10,31 +11,6 @@ function App() {
   const [loanTerm, setLoanTerm] = useState('');
   const [interest, setInterest] = useState('');
   const [monthlyPayment, setMonthlyPayment] = useState(null);
-
-  function calcMonthlyPayment(price, downPayment, loanTerm, interest) { //Calculates the Monthly Payments based on the values the user submits
-    const loanAmount = price - downPayment;
-    const monthlyRate = interest / 100 / 12;
-    const numberOfPayments = loanTerm * 12
-
-//Adding fees within monthly payments for use with pie chart
-    const principleAndInterest =
-    (loanAmount * monthlyRate * Math.pow(1 + monthlyRate, numberOfPayments)) /
-    (Math.pow(1 + monthlyRate, numberOfPayments) - 1);
-
-    const propertyTax = (price * 0.0125) / 12;
-    const insurance = 100;
-    const fees = 50;
-    
-    const total = principleAndInterest + propertyTax + insurance + fees;
-
-    return {
-      principleAndInterest: +principleAndInterest.toFixed(2),
-      propertyTax: +propertyTax.toFixed(2),
-      insurance,
-      fees,
-      total: +total.toFixed(2)
-    };
-  };
 
   const handleSubmit = (e) => { //arrow function with parameter e as the event object
     e.preventDefault(); //Prevents the page reloading when submitting
@@ -47,6 +23,13 @@ function App() {
     if (!hp || !dp || !lt || !rate || dp > hp) {
       alert("Invalid numbers. Down payment must be less than home price.")
       return;
+    }
+    if (lt <= 0) {
+      return NaN;
+    }
+
+    if (hp < 0 || dp < 0 || lt < 0 || rate < 0) {
+      return NaN;
     }
     const result = calcMonthlyPayment(hp, dp, lt, rate);
     setMonthlyPayment(result);
