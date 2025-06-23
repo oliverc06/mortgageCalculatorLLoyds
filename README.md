@@ -1,4 +1,5 @@
 This is a web-based mortgage calculator built as part of the Lloyds Banking Group Technology Engineering Virtual Experience on Forage. The tool allows users to estimate their monthly mortgage payments based on loan amount, interest rate, and term length.
+
 Features
 
     Responsive User Interface using HTML and CSS
