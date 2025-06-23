@@ -10,8 +10,6 @@ Features
 
     Clear Input Fields with improved layout and structure for ease of use
 
-    Deployed on Azure for public access
-
     Version Control with Git to support clean, trackable development
 
 Getting Started
@@ -48,3 +46,5 @@ Future Improvements
     Include real-time interest rate API integration
 
     Add downloadable summary of mortgage breakdown
+
+Azure does not currently work with this as I believe I need to get the paid plan although for this project I used the free options.
