@@ -12,9 +12,11 @@ Features
 
     Version Control with Git to support clean, trackable development
 
-Getting Started
+Getting Started:
 
-To run the project locally:
+Visit this site: https://mortgagecalclloyds.netlify.app/
+
+Or to run the project locally:
 
     Clone the repository:
 
@@ -31,9 +33,9 @@ Technologies Used
 
     Chart.js (for pie chart)
 
-    Microsoft Azure (for deployment)
+    Netlify (for deployment)
 
-    Git (for version control)
+    Git
 
 Future Improvements
 
@@ -46,5 +48,3 @@ Future Improvements
     Include real-time interest rate API integration
 
     Add downloadable summary of mortgage breakdown
-
-Azure does not currently work with this as I believe I need to get the paid plan although for this project I used the free options.
