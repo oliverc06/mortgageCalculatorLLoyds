@@ -12,7 +12,7 @@ Features
 
     Version Control with Git to support clean, trackable development
 
-Getting Started:
+Getting Started
 
 Visit this site: https://mortgagecalclloyds.netlify.app/
 
