@@ -1,6 +1,6 @@
 import './App.css';
 import React, { useState } from 'react'
-import { calcMonthlyPayment } from './calc';
+import calcMonthlyPayment from './calc';
 import { PieChart, Pie, Cell, Legend, ResponsiveContainer } from 'recharts'; //Implementing a pie chart with recharts
 
 const colours = ['#ADA8E6', '#82ca9d', '#ffc658', '#ff7f50'];
@@ -23,13 +23,6 @@ function App() {
     if (!hp || !dp || !lt || !rate || dp > hp) {
       alert("Invalid numbers. Down payment must be less than home price.")
       return;
-    }
-    if (lt <= 0) {
-      return NaN;
-    }
-
-    if (hp < 0 || dp < 0 || lt < 0 || rate < 0) {
-      return NaN;
     }
     const result = calcMonthlyPayment(hp, dp, lt, rate);
     setMonthlyPayment(result);
